@@ -1,6 +1,6 @@
 # Playwright testing a web application form
 
-## The scripts is using TypeCripts, testing eight sections of the web app.
+## The scripts is using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called 
 
 1. Form is submitted with required fields
 2. Form is submitted with required fields - form is cleared after submit
