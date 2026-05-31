@@ -1,2 +1,10 @@
 # playWright_testing_WebSubmitForm
-Using playwright to test web application submit form
+
+
+In order to start the site run:
+
+`npm i`
+
+`npm start`
+
+open at http://localhost:5000
