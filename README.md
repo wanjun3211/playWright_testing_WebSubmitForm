@@ -50,6 +50,30 @@
 })
 ```
 5. Form is NOT submitted without minimal fields
+   ```typescript
+     test('Form is NOT submitted without minimal fields', async ({ page }) => {
+    let formSubmitted = false
+
+    page.on('dialog', dialog => {
+        dialog.accept()
+        formSubmitted = true
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    // clear required fields:
+    await page.getByLabel('name').clear()
+
+    await clickButton(page, "Submit")
+
+    expect(formSubmitted).toBeFalsy()
+
+    })
+  ```
+
+
 6. Form is NOT submitted if user selects NO on dialog
 7. Form is completed - clear button clears inputs
 8. Form is completed - clear button clears memory
