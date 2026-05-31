@@ -71,7 +71,7 @@
     expect(formSubmitted).toBeFalsy()
 
     })
-  ```
+    ```
 
 
 6. Form is NOT submitted if user selects NO on dialog
