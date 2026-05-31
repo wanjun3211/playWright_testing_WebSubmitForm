@@ -49,9 +49,10 @@
 
 })
 ```
+
 5. Form is NOT submitted without minimal fields
-```typescript
-     test('Form is NOT submitted without minimal fields', async ({ page }) => {
+   ```typescript
+test('Form is NOT submitted without minimal fields', async ({ page }) => {
     let formSubmitted = false
 
     page.on('dialog', dialog => {
@@ -70,8 +71,15 @@
 
     expect(formSubmitted).toBeFalsy()
 
-    })
-    ```
+})
+```
+
+
+
+
+
+
+
 
 
 6. Form is NOT submitted if user selects NO on dialog
