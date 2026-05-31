@@ -3,6 +3,13 @@
 ### The scripts are using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called WebFormTesting.Spec.ts
 
 1. Form is submitted with required fields
+2. Form is submitted with required fields - form is cleared after submit
+3. Form is NOT submitted without minimal fields
+4. Form is NOT submitted if user selects NO on dialog
+7. Form is completed - clear button clears inputs
+8. Form is completed - clear button clears memory
+9. Form is completed - clear button does not clear inputs if dialog rejected
+10. Form is completed - save data button saves data
          
 ```typescript
     test('Form is submitted with required fields', async ({ page }) => {
@@ -23,7 +30,7 @@
 
 })
 ```
-3. Form is submitted with required fields - form is cleared after submit
+
 
    ```typescript
     test('Form is submitted with required fields - form is cleared after submit', async ({ page }) => {
@@ -50,7 +57,7 @@
 })
 ```
 
-5. Form is NOT submitted without minimal fields
+
    ```typescript
 test('Form is NOT submitted without minimal fields', async ({ page }) => {
     let formSubmitted = false
@@ -82,11 +89,7 @@ test('Form is NOT submitted without minimal fields', async ({ page }) => {
 
 
 
-6. Form is NOT submitted if user selects NO on dialog
-7. Form is completed - clear button clears inputs
-8. Form is completed - clear button clears memory
-9. Form is completed - clear button does not clear inputs if dialog rejected
-10. Form is completed - save data button saves data
+
 
 
 ### There are four seperate functions created to make code more concise.
