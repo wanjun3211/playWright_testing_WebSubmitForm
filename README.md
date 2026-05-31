@@ -50,7 +50,7 @@
 })
 ```
 5. Form is NOT submitted without minimal fields
-   ```typescript
+```typescript
      test('Form is NOT submitted without minimal fields', async ({ page }) => {
     let formSubmitted = false
 
