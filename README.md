@@ -12,6 +12,10 @@
 8. Form is completed - save data button saves data
 
 
+### There are four seperate functions created to make code more concise.
+
+
+
 
 
 ### The website could be locally hosted using the following command in this project folder
