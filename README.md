@@ -1,6 +1,6 @@
 # Playwright testing a web application form
 
-### The scripts is using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called WebFormTesting.Spec.ts
+### The scripts are using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called WebFormTesting.Spec.ts
 
 1. Form is submitted with required fields
          
