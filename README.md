@@ -12,7 +12,8 @@
 10. Form is completed - save data button saves data
          
 ```typescript
-    test('Form is submitted with required fields', async ({ page }) => {
+
+test('Form is submitted with required fields', async ({ page }) => {
     let formSubmitted = false
 
     page.on('dialog', dialog => {
@@ -29,11 +30,8 @@
     await expect(formSubmitted).toBeTruthy()
 
 })
-```
 
-
-   ```typescript
-    test('Form is submitted with required fields - form is cleared after submit', async ({ page }) => {
+test('Form is submitted with required fields - form is cleared after submit', async ({ page }) => {
     let formSubmitted = false
 
     page.on('dialog', dialog => {
@@ -55,10 +53,7 @@
     await checkIfItemsEmpty(page)
 
 })
-```
 
-
-   ```typescript
 test('Form is NOT submitted without minimal fields', async ({ page }) => {
     let formSubmitted = false
 
@@ -79,8 +74,92 @@ test('Form is NOT submitted without minimal fields', async ({ page }) => {
     expect(formSubmitted).toBeFalsy()
 
 })
+
+test('Form is NOT submitted if user selects NO on dialog', async ({ page }) => {
+    page.on('dialog', dialog => {
+        dialog.dismiss()
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    await clickButton(page, "Submit")
+
+    await checkIfItemsNotEmpty(page)
+})
+
+// clear progress tests:
+test('Form is completed - clear button clears inputs', async ({ page }) => {
+    page.on('dialog', dialog => {
+        dialog.accept()
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    await clickButton(page, "Clear")
+
+    // check if form is cleared:
+    await checkIfItemsEmpty(page)
+
+})
+
+test('Form is completed - clear button clears memory', async ({ page }) => {
+    page.on('dialog', dialog => {
+        dialog.accept()
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    await clickButton(page, "Save")
+
+    await clickButton(page, "Clear")
+
+    await page.reload()
+
+    await checkIfItemsEmpty(page)
+
+})
+
+test('Form is completed - clear button does not clear inputs if dialog rejected', async ({ page }) => {
+    page.on('dialog', dialog => {
+        dialog.dismiss()
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    await clickButton(page, "Clear")
+
+    await checkIfItemsNotEmpty(page)
+
+})
+
+test('Form is completed - save data button saves data', async ({ page }) => {
+    page.on('dialog', dialog => {
+        dialog.accept()
+    })
+
+    await page.goto('FeedBackForm.html')
+
+    await completeFields(page)
+
+    await clickButton(page, "Save")
+
+    await page.reload();
+
+    await checkIfItemsNotEmpty(page)
+
+})
 ```
 
+
+  
 
 
 
