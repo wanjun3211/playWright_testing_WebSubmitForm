@@ -1,6 +1,6 @@
 # Playwright testing a web application form
 
-## The scripts is using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called WebFormTesting.Spec.ts
+### The scripts is using TypeCripts, testing eight sections of the web app. The main test file could be found under the tests folder, which is called WebFormTesting.Spec.ts
 
 1. Form is submitted with required fields
 2. Form is submitted with required fields - form is cleared after submit
@@ -14,7 +14,7 @@
 
 
 
-## The website could be locally hosted using the following command in this project folder
+### The website could be locally hosted using the following command in this project folder
 In order to start the site run:
 
 `npm i`
